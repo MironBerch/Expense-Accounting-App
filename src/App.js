@@ -1,4 +1,8 @@
 import CostItem from './components/CostItem';
+import './components/CostItem.css';
+import CostDate from './components/CostDate';
+import Card from './components/Card';
+import Costs from './components/Costs';
 
 
 function App() {
@@ -16,16 +20,9 @@ function App() {
   ];
   return (
     <div>
-      <h1>Hello</h1>
-      <CostItem 
-      date={costs[0].date} 
-      description={costs[0].description} 
-      amount={costs[0].amount}
-      />
-      <CostItem date={costs[1].date
-      } description={costs[1].description}
-       amount={costs[1].amount}
-      />
+      <Card cost-item>
+        <Costs costs={costs}/>
+      </Card>
     </div>
   );
 }
