@@ -1,6 +1,4 @@
-import CostItem from './components/CostItem';
 import './components/CostItem.css';
-import CostDate from './components/CostDate';
 import Card from './components/Card';
 import Costs from './components/Costs';
 
