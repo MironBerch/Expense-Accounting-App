@@ -1,6 +1,7 @@
 import './components/CostItem.css';
 import Card from './components/Card';
 import Costs from './components/Costs';
+import NewCost from './components/NewCost/NewCost';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <div>
       <Card cost-item>
+        <NewCost />
         <Costs costs={costs}/>
       </Card>
     </div>
