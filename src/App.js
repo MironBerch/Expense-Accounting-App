@@ -5,22 +5,30 @@ import NewCost from './components/NewCost/NewCost';
 
 
 function App() {
-  const costs = [
+    const costs = [
     {
-      date: new Date(2021, 2, 12),
-      description: 'Игра',
-      amount: 15
+        id: 'c1',
+        date: new Date(2021, 2, 12),
+        description: 'Игра',
+        amount: 15
     },
     {
-      date: new Date(2022, 10, 20),
-      description: 'Докимакура',
-      amount: 999
+        id: 'c2',
+        date: new Date(2022, 10, 20),
+        description: 'Докимакура',
+        amount: 999
     }
-  ];
-  return (
-    <div>
-      <Card cost-item>
-        <NewCost />
+    ];
+
+	const addCostHandler = (cost) => {
+		console.log(cost);
+		console.log('App component');
+	};
+
+    return (
+      <div>
+        <Card cost-item>
+          <NewCost onAddCost={addCostHandler} />
         <Costs costs={costs}/>
       </Card>
     </div>
