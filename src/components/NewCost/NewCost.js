@@ -7,10 +7,10 @@ const NewCost = (props) => {
     const saveCostDataHandler = (inputCostData) => {
         const costData = {
             ...inputCostData,
-            id: Math.random().toString()
+            id: Math.random().toString(),
         }
         
-        props.onAddCost(costData)
+        props.onAddCost(costData);
 
     }
 
