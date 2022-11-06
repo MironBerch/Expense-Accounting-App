@@ -1,9 +1,6 @@
-import './components/CostItem.css';
-import Card from './components/Card';
-import Costs from './components/Costs';
-import NewCost from './components/NewCost/NewCost';
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import NewCost from "./components/NewCost/NewCost";
+import Costs from "./components/Costs/Costs";
 
 const INITIAL_COSTS = [
   {
@@ -27,23 +24,27 @@ const INITIAL_COSTS = [
 ];
 
 const App = () => {
+  const [costs, setCosts] = useState(INITIAL_COSTS);
 
-    const [costs, setCosts] = useState(INITIAL_COSTS);
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h1", {}, "Начнём изучение React!"),
+  //   React.createElement(Costs, { costs: costs })
+  // );
 
-    const addCostHandler = (cost) => {
-        setCosts((prevCosts) => {
-          return [cost, ...prevCosts];
-        });
-    };
+  const addCostHandler = (cost) => {
+    setCosts((prevCosts) => {
+      return [cost, ...prevCosts];
+    });
+  };
 
-    return (
-      <div>
-        <Card cost-item>
-            <NewCost onAddCost={addCostHandler} />
-            <Costs costs={costs}/>
-      </Card>
+  return (
+    <div>
+      <NewCost onAddCost={addCostHandler} />
+      <Costs costs={costs} />
     </div>
   );
-}
+};
 
 export default App;
